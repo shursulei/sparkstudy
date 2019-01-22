@@ -1,5 +1,6 @@
 package com.shursulei.spark.sql
 import org.apache.spark.{ SparkContext, SparkConf }
+import org.apache.spark.rdd.RDD._
 /**
  * 复杂Top N案例实战
  */
@@ -10,7 +11,6 @@ object TopNGroup {
      *     * 例如说通过setMaster来设置程序要链接的Spark集群的Master的URL,如果设置
      *     * 为local，则代表Spark程序在本地运行，特别适合于机器配置条件非常差（例如
      *     * 只有1G的内存）的初学者       *
-     *     
      */
     val conf = new SparkConf() //创建SparkConf对象
     conf.setAppName("Top N Basically!") //设置应用程序的名称，在程序运行的监控界面可以看到名称

@@ -1,5 +1,6 @@
 package com.shursulei.spark
 import org.apache.spark.{ SparkConf, SparkContext }
+import org.apache.spark.rdd.RDD._
 /**
  * 注释掉的内容为老师的方法，我改写了适用于RDD的方法
  */

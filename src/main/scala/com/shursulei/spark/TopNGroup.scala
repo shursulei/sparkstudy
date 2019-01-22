@@ -1,5 +1,6 @@
 package com.shursulei.spark
 import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.rdd.RDD._
 /**
   * TopNGroup.scala
   */

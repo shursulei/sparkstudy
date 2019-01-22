@@ -1,4 +1,4 @@
-/*
+
 package com.shursulei.spark.streaming.adviertisement;
 
 import kafka.serializer.StringDecoder;
@@ -9,7 +9,6 @@ import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaPairInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.streaming.kafka.KafkaUtils;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -21,13 +20,13 @@ import scala.Tuple2;
 
 public class AdClickedSteamingStatus {
     public static Tuple2 main(String[] args) throws InterruptedException {
-		*/
+
 /*第105课：  Spark Streaming电商广告点击综合案例在线点击统计实战
 	     * 广告点击的基本数据格式：timestamp,ip,userID,adID,province,city
          *时间、ip、用户ID、广告ID，点击广告所在的省、所在的城市
 	     * 至少2条线程，一条线程接受数据，一条处理数据
 	     *每个executor 一般分配 多少core？5个core最佳的 分配为奇数个core表现最佳 3个 5个 7个
-	    *//*
+	    */
 
         SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("SparkStreamingWordCountOnline");
         JavaStreamingContext jsc = new JavaStreamingContext(conf, Durations.seconds(5));
@@ -43,7 +42,7 @@ public class AdClickedSteamingStatus {
 
         JavaPairDStream pairs = adClickedStreaming.mapToPair(new PairFunction,String,Long> (){
             @Override
-            public Tuple2 call(Tuple2 t) throws Exception {
+            public Tuple2 call(Tuple2 t) throws Exception{
                 String[] splited = t._2.split("\t");
                 String timestamp = splited[0];
                 String ip = splited[1];
@@ -64,7 +63,7 @@ public class AdClickedSteamingStatus {
             public Long call(Long i1, Long i2) throws Exception {
                 return i1 + i2;
             }
-*/
+
 /*            @Override
             public   Long call(Long i1, Long i2) throws Exception {
                 return i1 + i2;
@@ -103,4 +102,3 @@ public class AdClickedSteamingStatus {
         }
     }
 }
-*/

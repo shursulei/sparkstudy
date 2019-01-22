@@ -1,5 +1,6 @@
 package com.shursulei.spark
 import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.rdd.RDD._
 /**
  * sc.textFile().flatMap(_.split(" ")).map((_, 1)).reduceByKey(_+_, 1).map(pair => (pair._2, pair._1)).sortByKey(false).map(pair => (pair._2, pair._1)).collect
  * 2 3 

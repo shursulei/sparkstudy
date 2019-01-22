@@ -1,6 +1,7 @@
 package com.shursulei.spark.sql
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.rdd.RDD._
 object SparkSQLToHive {
   def main(args: Array[String]): Unit = {
     //创建SparkConf用于读取系统信息并设置运用程序的名称
